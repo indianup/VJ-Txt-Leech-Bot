@@ -154,12 +154,10 @@ async def upload(bot: Client, m: Message):
             elif '/utkarshapp.mpd' in url:
                id = url.split('/')[-2]
                url = 'https://apps-s3-prod.utkarshapp.com/' + id + '/utkarshapp.com'
-
-	        elif '/master.mpd' in url:
-                 id =  url.split("/")[-2]
-                 url =  "https://pw-url-api-v1mf.onrender.com/process?v=https://sec1.pw.live/" + id + "/master.mpd&quality=480"
-
-
+		    if '/master.mpd' in url:
+                id =  url.split("/")[-2]
+                url =  "https://pw-url-api-v1mf.onrender.com/process?v=https://sec1.pw.live/" + id + "/master.mpd&quality=480"
+			    
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
