@@ -151,14 +151,14 @@ async def upload(bot: Client, m: Message):
                 params = (('url', f'{url}'),)
                 response = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)
                 url = response.json()['url']
-            elif '/utkarshapp.mpd' in url:
-                id = url.split('/')[-2]
-                url = 'https://apps-s3-prod.utkarshapp.com/' + id + '/utkarshapp.com'
+            #elif '/utkarshapp.mpd' in url:
+             #   id = url.split('/')[-2]
+             #   url = 'https://apps-s3-prod.utkarshapp.com/' + id + '/utkarshapp.com'
             elif '/master.mpd' in url:
              id =  url.split("/")[-2]
-                content = fetch_data(url1, url2)
                      url1 =  "https://pw-url-api-v1mf.onrender.com/process?v=https://sec1.pw.live/" + id + "/master.mpd&quality=360"
                         url2 =  "https://pw-url-api-92d5.onrender.com/process?v=https://sec1.pw.live/" + id + "/master.mpd&quality=480"
+                content = fetch_data(url1, url2)
                
 
             
